@@ -1,0 +1,42 @@
+body {
+    background-color: gray;
+}
+
+.card {
+    margin: auto;
+    margin-top: 10px;
+}
+
+.form {
+    border: 2px solid rgb(75 70 74);
+    border-radius: 0.5em;
+    border-style: solid;
+    align-items: center;
+    justify-content: center;
+
+    
+    label {
+        width: 95%;
+        margin-left: 18px;
+        margin-right: 18px;
+        padding: 12px 12px 5px 5px;
+        display: flex;
+      }
+
+    input {
+         width: 95%;
+         border-radius: 0.5em;
+         margin-left: 18px;
+         margin-right: 18px;
+         align-items: center;
+         justify-content: center;
+    }
+}
+
+.btn-form {
+    background-color: #04AA6D;
+    height: 30px;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
