@@ -18,8 +18,17 @@ def delete_task_view(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     task.delete()
     return redirect('/')
-    
 
+def check_task(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if task.done:
+        task.done = False
+        task.save()
+    else:
+        task.done = True
+        task.save()
+    return redirect('/')
+    
 def edit_task_view(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     if request.method == 'GET':
