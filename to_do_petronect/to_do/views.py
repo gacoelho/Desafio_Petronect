@@ -14,6 +14,12 @@ def creat_task_view(request):
     context = {"form": form}
     return render(request, "to_do/task_form.html", context)
 
+def delete_task_view(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    task.delete()
+    return redirect('/')
+    
+
 def edit_task_view(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     if request.method == 'GET':
