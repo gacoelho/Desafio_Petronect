@@ -1,7 +1,7 @@
 O APP Web foi desenvolvido usando python usando o framework **Django** para administrar o backend.
 
 O Django administra e modela o banco de dados, no caso dessa aplicaçao usamo o **sqlite** que vem como padrão no django e facilita rodar localmente.
-Para uma aplicação mais robusta o PostreSQL devidamente configurado séria melhor.
+Para uma aplicação mais robusta o PostreSQL devidamente configurado seria melhor.
 
 A estrutura:
 ```
