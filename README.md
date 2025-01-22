@@ -19,7 +19,7 @@ A estrutura:
 
 **manage.py** = arquivo que iniciar o servidor localmente
 
-**requirements.txt** = todas as dependencias do python para rodar a aplication localmente atraves do comando ```pip install -r requiremts.txt```
+**requirements.txt** = todas as dependencias do python para rodar a aplication localmente atraves do comando 
 
 **static** = diretório com os arquivos estáticos com style.css
 
@@ -55,9 +55,31 @@ Aplicação está Rondado no site no https://gacoelho.pythonanywhere.com/
 
 Para rodar localmente no terminal linux, segue os passos:
 
-1- baixar o reposiório:
+obs: É necessário já ter o *python* e *git* instalado.
 
-```git clone 
+1- Baixar o reposiório:
+
+```git clone https://github.com/gacoelho/Desafio_Petronect.git```
+
+2- Entrar no repositório:
+
+```cd Desafio_Petrocnect```
+
+```cd to_do_petrocnect```
+
+3- Baixar as dependencias:
+
+```pip install -r requirements.txt```
+
+4- Iniciar o servidor local do Django:
+
+```python manage.py makemigrations```
+
+```python manage.py migrate```
+
+```python manage.py runserver```
+
+o site será hospedado localmente no http://127.0.0.1:8000/
 
 
 
