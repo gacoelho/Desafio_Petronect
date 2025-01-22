@@ -17,7 +17,7 @@ A estrutura:
 
 **db.sqlite3** = Banco de dados armazenado localmente.
 
-**manage.py** = arquivo que iniciar o servidor localmente (falarei sobre ele mais abaixo)
+**manage.py** = arquivo que iniciar o servidor localmente
 
 **requirements.txt** = todas as dependencias do python para rodar a aplication localmente atraves do comando ```pip install -r requiremts.txt```
 
@@ -30,6 +30,7 @@ A estrutura:
 **to_do_petronect**= diretório com os arquivos de configuração tanto do backend, quanto urls paths, wsgi e asgi.
 
 to_do:
+
 estrutura
 ```
 ├── admin.py
@@ -45,6 +46,18 @@ estrutura
 
 **forms.py** = define o form para que o django consigo criar todos os campos necessários pro *modelo Task* quando for requisitado.
 
-**models.py** == define o *modele Task* com os campos necessários {title (titulo), description (descrição), pub_date(data de criação), due_date(data de entrega da tarefa)}
+**models.py** == define o *modelo Task* com os campos necessários {title (titulo), description (descrição), pub_date(data de criação), due_date(data de entrega da tarefa)}
 
-**views.py** == criar as paginas e renderiza a inteface do frontend. Chamando os HTML corresponde e verificando HTTP methods da requisão ('GET' e 'POST') e retornando ao usário as tarefas.
+**views.py** == criar as paginas e renderiza a inteface do frontend. Chamando os HTML corresponde e verificando HTTP methods da requisição ('GET' e 'POST') e retornando ao usário as tarefas.
+
+
+Aplicação está Rondado no site no https://gacoelho.pythonanywhere.com/
+
+Para rodar localmente no terminal linux, segue os passos:
+
+1- baixar o reposiório:
+
+```git clone 
+
+
+
