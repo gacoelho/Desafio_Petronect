@@ -15,7 +15,16 @@ A estrutura:
     └── to_do_petronect
 ```
 
-#**db.sqlite3** = Banco de dados armazenado localmente.
+**db.sqlite3** = Banco de dados armazenado localmente.
+
 **manage.py** = arquivo que iniciar o servidor localmente (falarei sobre ele mais abaixo)
-**requirements.txt** = todas as dependencias do python para rodar a aplication localmente atraves do comando <pip install -r requiremts.txt>
-**static**
+
+**requirements.txt** = todas as dependencias do python para rodar a aplication localmente atraves do comando ```pip install -r requiremts.txt```
+
+**static** = diretório com os arquivos estáticos com style.css
+
+**templates** = diretório com os arquivos HTML de cada página da aplicação.
+
+**to_do**= diretório com toda a funcionalidade da função
+
+**to_do_petronect**= diretório com os arquivos de configuração tanto do backend, quanto urls paths, wsgi e asgi.
