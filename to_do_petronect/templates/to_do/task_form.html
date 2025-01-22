@@ -8,6 +8,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'to_do/style.css' %}">
   </head>
+  <header>
+  <nav class="navbar">
+    <h1>To-do List</h1>
+    <a class="btn btn-primary" href="/">Turn back</a>
+  </nav>
+  </header>
   <body>
     <form  class="form" action= "" method="post">
         {% csrf_token %}

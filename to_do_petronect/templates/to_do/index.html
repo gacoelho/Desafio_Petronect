@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'to_do/style.css' %}">
   </head>
   <header>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar">
       <h1>To-do List</h1>
       <a class="btn btn-primary" href="task_form/">add task</a>
     </nav>
@@ -46,7 +46,7 @@
           <a type="button" class="btn-close" href="del_task/{{list.id}}/"></a>
         </div>
         <div class="collapse" id="collapse{{list.id}}">
-          <div class="list-group-item">
+          <div class="card card-body">
             {{list.description}}
           </div>
         </div>
