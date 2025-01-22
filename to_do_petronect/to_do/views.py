@@ -43,6 +43,6 @@ def edit_task_view(request, task_id):
     return render(request, "to_do/error_page1.html")
     
 def index(request):
-    task_list = Task.objects.order_by("-pub_date")
+    task_list = Task.objects.order_by("due_date")
     context = {"task_list": task_list}
     return render(request,"to_do/index.html", context)

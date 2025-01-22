@@ -10,34 +10,83 @@
   </head>
   <header>
     <nav class="navbar navbar-dark bg-dark">
-      <h1 style="color: aliceblue">To-do List</h1>
+      <h1>To-do List</h1>
       <a class="btn btn-primary" href="task_form/">add task</a>
     </nav>
   </header>
   <body>
     <div class="card" style="max-width: 18rem;">
       <ul class="list-group list-group-flush">
+      <li id="header-card" class="list-group-item">Due</li>
       {% for list in task_list %}
-        <li class="list-group-item sm">
-        {% if not list.done %}
+      {% if not list.done %}
+        <li id="not_done" class="list-group-item">
           <input id="check_box" class="form-check-input" type="checkbox" value="{{list.id}}"  onchange="doCheck(value)">
           <label class="form-check-label" for="flexCheckDefault">
               {{list}}
-        {% else %}
-          <input id="check_box" class="form-check-input" type="checkbox" value="{{list.id}}"  onchange="doCheck(value)" checked>
-          <label class="form-check-label" for="flexCheckChecked">
-              <s>{{list}}</s>
-        {% endif %}
+              <br>
+              {% if list.expire %}
+              <div style="color: red;" id="date">{{list.due_date}}</div> 
+              {% else %}
+              <div id="date">{{list.due_date}}</div> 
+              {% endif %}
           </label>
           <div class="float-end">
+            <a type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{list.id}}" aria-expanded="false" aria-controls="collapseExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+              </svg>
+            </a>
           <a href="edit_task/{{list.id}}/">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
               <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
             </svg>
           </a>
           <a type="button" class="btn-close" href="del_task/{{list.id}}/"></a>
+        </div>
+        <div class="collapse" id="collapse{{list.id}}">
+          <div class="list-group-item">
+            {{list.description}}
           </div>
+        </div>
+
         </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="card" style="max-width: 18rem;">
+      <ul class="list-group list-group-flush">
+      <li id="header-card" class="list-group-item">Done</li>
+      {% for list in task_list %}
+      {% if list.done %}
+        <li id="done" class="list-group-item">
+          <input id="check_box" class="form-check-input" type="checkbox" value="{{list.id}}"  onchange="doCheck(value)" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+              <s>{{list}}</s>
+          </label>
+          <div class="float-end">
+            <a type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{list.id}}" aria-expanded="false" aria-controls="collapseExample">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+              </svg>
+            </a>
+          <a href="edit_task/{{list.id}}/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+              <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+            </svg>
+          </a>
+          <a type="button" class="btn-close" href="del_task/{{list.id}}/"></a>
+        </div>
+        <div class="collapse" id="collapse{{list.id}}">
+          <div class="list-group-item">
+            {{list.description}}
+          </div>
+        </div>
+        </li>
+      {% endif %}
       {% endfor %}
       </ul>
     </div>
