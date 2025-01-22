@@ -29,7 +29,7 @@ A estrutura:
 
 **to_do_petronect**= diretório com os arquivos de configuração tanto do backend, quanto urls paths, wsgi e asgi.
 
-#to_do:
+to_do:
 estrutura
 ```
 ├── admin.py
@@ -43,4 +43,8 @@ estrutura
 └── views.py
 ```
 
-**forms.py**
+**forms.py** = define o form para que o django consigo criar todos os campos necessários pro *modelo Task* quando for requisitado.
+
+**models.py** == define o *modele Task* com os campos necessários {title (titulo), description (descrição), pub_date(data de criação), due_date(data de entrega da tarefa)}
+
+**views.py** == criar as paginas e renderiza a inteface do frontend. Chamando os HTML corresponde e verificando HTTP methods da requisão ('GET' e 'POST') e retornando ao usário as tarefas.
