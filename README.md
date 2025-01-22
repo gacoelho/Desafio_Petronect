@@ -28,3 +28,19 @@ A estrutura:
 **to_do**= diretório com toda a funcionalidade da função
 
 **to_do_petronect**= diretório com os arquivos de configuração tanto do backend, quanto urls paths, wsgi e asgi.
+
+#to_do:
+estrutura
+```
+├── admin.py
+├── apps.py
+├── forms.py
+├── __init__.py
+├── migrations
+├── models.py
+├── __pycache__
+├── tests.py
+└── views.py
+```
+
+**forms.py**
